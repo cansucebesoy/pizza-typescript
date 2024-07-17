@@ -1,7 +1,7 @@
 import { FormGroup, Input } from "reactstrap";
 export default function CustomerName({ name, setName }) {
   const handleInput = (e) => {
-    setName(e.target.value);
+    setName(e.target.value.trim());
   };
   return (
     <div className="w-full flex justify-center ">

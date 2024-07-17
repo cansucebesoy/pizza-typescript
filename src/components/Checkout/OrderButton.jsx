@@ -2,6 +2,9 @@ import axios from "axios";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function OrderButton({ orderSummary }) {
+  //const [isSubmitted, setIsSubmitted] = useState(false);
+  //const [formError, setFormError] = useState('');
+
   let history = useHistory();
 
   const handleClick = async () => {
@@ -21,7 +24,7 @@ export default function OrderButton({ orderSummary }) {
         history.push({
           pathname: "/Success",
           state: {
-            request: orderSummary,
+            response: response.data,
           },
         });
       } catch (error) {

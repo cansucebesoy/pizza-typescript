@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
       <hr className="w-full text-white text-sm my-4" />
 
-      <div className="flex w-full mb-4">
+      <div className="flex w-full">
         <div className="w-2/3 mx-auto flex justify-between">
           <div className="text-white font-light mb-4">
             © 2024 Teknolojik Yemekler, Inc.

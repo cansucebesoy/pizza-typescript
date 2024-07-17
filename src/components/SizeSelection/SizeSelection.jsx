@@ -5,6 +5,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
+
 import { useState } from "react";
 
 export default function SizeSelection({ setSize, dough, setDough }) {
@@ -27,44 +28,53 @@ export default function SizeSelection({ setSize, dough, setDough }) {
           <h3 className="font-bold text-lg my-4">
             Boyut Seç <span className="text-[#CE2829]">*</span>
           </h3>
-          <div className="text-sm space-y-2 ">
-            <FormGroup check>
-              <Input
-                data-cy="kucuk-radio"
-                value="Küçük"
-                onClick={handleSizeClick}
-                id="sizeRadio1"
-                name="sizeRadio"
-                type="radio"
-              />
-              <Label for="sizeRadio1" check>
-                Küçük
+          <div className="text-sm space-y-2 flex">
+            <FormGroup className="flex justify-start pl-0" check>
+              <Label for="sizeRadio1" check className="flex items-center mt-2">
+                <Input
+                  className="hidden peer"
+                  data-cy="kucuk-radio"
+                  value="Küçük"
+                  onClick={handleSizeClick}
+                  id="sizeRadio1"
+                  name="sizeRadio"
+                  type="radio"
+                />
+                <div className="w-10 h-10 bg-[#FAF7F2] peer-checked:bg-[#FDC913] flex items-center justify-center rounded-full">
+                  S
+                </div>
               </Label>
             </FormGroup>
-            <FormGroup check>
-              <Input
-                data-cy="orta-radio"
-                value="Orta"
-                onClick={handleSizeClick}
-                id="sizeRadio2"
-                name="sizeRadio"
-                type="radio"
-              />
-              <Label for="sizeRadio2" check>
-                Orta
+            <FormGroup className="flex justify-start" check>
+              <Label for="sizeRadio2" check className="flex items-center">
+                <Input
+                  className="hidden peer"
+                  data-cy="orta-radio"
+                  value="Orta"
+                  onClick={handleSizeClick}
+                  id="sizeRadio2"
+                  name="sizeRadio"
+                  type="radio"
+                />
+                <div className="w-10 h-10 bg-[#FAF7F2] peer-checked:bg-[#FDC913] flex items-center justify-center rounded-full">
+                  M
+                </div>
               </Label>
             </FormGroup>
-            <FormGroup check>
-              <Input
-                data-cy="buyuk-radio"
-                value="Büyük"
-                onClick={handleSizeClick}
-                id="sizeRadio3"
-                name="sizeRadio"
-                type="radio"
-              />
+            <FormGroup className="flex justify-start" check>
               <Label for="sizeRadio3" check>
-                Büyük
+                <Input
+                  className="hidden peer"
+                  data-cy="buyuk-radio"
+                  value="Büyük"
+                  onClick={handleSizeClick}
+                  id="sizeRadio3"
+                  name="sizeRadio"
+                  type="radio"
+                />
+                <div className="w-10 h-10 bg-[#FAF7F2] peer-checked:bg-[#FDC913] flex items-center justify-center rounded-full">
+                  L
+                </div>
               </Label>
             </FormGroup>
           </div>

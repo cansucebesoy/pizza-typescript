@@ -3,6 +3,7 @@ import { FormGroup, Input, Label } from "reactstrap";
 export default function Toppings({ toppings, setToppings }) {
   const handleClick = (e) => {
     if (e.target.checked) {
+      //console.log(e); - target -> checked:true/false
       if (!(toppings.length < 10)) {
         e.preventDefault();
         console.error("En fazla 10 malzeme seçebilirsiniz");
@@ -10,8 +11,10 @@ export default function Toppings({ toppings, setToppings }) {
         setToppings([...toppings, e.target.value]);
       }
     } else {
+      //checkbox iptal edilirse
+      //seçtiğimiz toppingleri tutmamız lazım
       const newToppings = toppings.filter(
-        (topping) => !(topping === e.target.value)
+        (topping) => topping !== e.target.value
       );
       setToppings(newToppings);
     }
@@ -34,6 +37,7 @@ export default function Toppings({ toppings, setToppings }) {
     "Kabak",
     "Cheddar",
   ];
+
   return (
     <div className="w-full flex justify-center ">
       <div className="w-full md:w-2/3 xl:w-2/5 px-4">
