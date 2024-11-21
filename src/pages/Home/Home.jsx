@@ -29,7 +29,7 @@ const Home = () => {
             PİZZA DOYURUR
           </p>
           <button
-            className="bg-[#FDC913] py-2 px-8 rounded-full" //padding
+            className="bg-[#FDC913] py-2 px-8 rounded-full text-white font-bold"
             onClick={handleClick}
           >
             ACIKTIM

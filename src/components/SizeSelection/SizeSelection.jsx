@@ -87,15 +87,15 @@ export default function SizeSelection({ setSize, dough, setDough }) {
             <Dropdown className="w-full" isOpen={dropdownOpen} toggle={toggle}>
               <DropdownToggle
                 data-cy="dough-toggle"
-                className="w-full flex space-between items-center"
+                className="w-full flex space-between items-center bg-[#FAF7F2] border-none hover:bg-[#FDC913]"
                 size="sm"
                 caret
               >
-                <div className="w-full text-start ">
+                <div className="w-full text-middle text-[#5F5F5F] font-bold m-1">
                   {!dough ? "Hamur Kalınlığı Seç" : dough}
                 </div>
               </DropdownToggle>
-              <DropdownMenu className="w-full bg-[#FAF7F2]">
+              <DropdownMenu className="w-full bg-[#FAF7F2]  ">
                 <DropdownItem
                   data-cy="thin-dough"
                   active={dough == "İnce"}
