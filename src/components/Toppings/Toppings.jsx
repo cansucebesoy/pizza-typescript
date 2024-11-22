@@ -1,6 +1,11 @@
+import { useForm } from "react-hook-form";
 import { FormGroup, Input, Label } from "reactstrap";
 
 export default function Toppings({ toppings, setToppings }) {
+  const { register, watch } = useForm();
+
+  const selectedToppings = watch("toppings", []);
+
   const handleClick = (e) => {
     if (e.target.checked) {
       //console.log(e); - target -> checked:true/false
@@ -46,14 +51,16 @@ export default function Toppings({ toppings, setToppings }) {
         <div data-cy="toppings" className="w-full flex flex-wrap gap-y-2">
           {toppingData.map((topping, index) => {
             return (
-              <FormGroup className="w-1/2 sm:w-1/3" check>
+              <FormGroup className="w-1/2 sm:w-1/3" check key={index}>
                 <Input
+                  {...register("toppings", {
+                    onChange: handleClick,
+                  })}
                   data-cy={topping}
                   bsSize="sm"
                   className="bg-[#FAF7F2] w-8 h-4 checked:bg-[#FDC913] border-none accent-black"
-                  value={topping}
-                  onClick={handleClick}
                   id={"toppingOption" + index}
+                  value={topping}
                   type="checkbox"
                 />
                 <Label
