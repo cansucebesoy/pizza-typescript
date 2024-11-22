@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function OrderCount({ pizzaCount, setPizzaCount }) {
   const handleNegativeClick = () => {
     if (pizzaCount > 1) {

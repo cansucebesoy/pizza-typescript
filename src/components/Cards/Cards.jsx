@@ -20,7 +20,7 @@ export default function Cards({ handleClick }) {
                 onClick={handleClick}
                 className="text-[#CE2829] bg-[#ffffff] rounded-full px-3 py-1 md:px-4 md:py-2 mt-2 md:mt-4 font-semibold text-sm md:text-base"
               >
-                Sipariş Ver!!!
+                Sipariş Ver
               </button>
             </div>
           </div>

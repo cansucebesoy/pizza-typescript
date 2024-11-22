@@ -7,24 +7,17 @@ import {
 } from "reactstrap";
 
 import { useState } from "react";
+import DoughSelection from "../DoughSelection/DoughSelection";
 
 export default function SizeSelection({ setSize, dough, setDough }) {
   const handleSizeClick = (e) => {
     setSize(e.target.value);
   };
 
-  const handleDoughClick = (e) => {
-    setDough(e.target.value);
-  };
-
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
-
   return (
     <div className="w-full flex justify-center">
       <div className="w-full md:w-2/3 xl:w-2/5 px-4 flex">
-        <div className="w-1/2">
+        <div className="w-1/2 ">
           <h3 className="font-bold text-lg my-4">
             Boyut Seç <span className="text-[#CE2829]">*</span>
           </h3>
@@ -79,51 +72,7 @@ export default function SizeSelection({ setSize, dough, setDough }) {
             </FormGroup>
           </div>
         </div>
-        <div className="w-1/2">
-          <h3 className="font-bold text-lg my-4">
-            Hamur Seç <span className="text-[#CE2829]">*</span>
-          </h3>
-          <div>
-            <Dropdown className="w-full" isOpen={dropdownOpen} toggle={toggle}>
-              <DropdownToggle
-                data-cy="dough-toggle"
-                className="w-full flex space-between items-center bg-[#FAF7F2] border-none hover:bg-[#FDC913]"
-                size="sm"
-                caret
-              >
-                <div className="w-full text-middle text-[#5F5F5F] font-bold m-1">
-                  {!dough ? "Hamur Kalınlığı Seç" : dough}
-                </div>
-              </DropdownToggle>
-              <DropdownMenu className="w-full bg-[#FAF7F2]  ">
-                <DropdownItem
-                  data-cy="thin-dough"
-                  active={dough == "İnce"}
-                  value="İnce"
-                  onClick={handleDoughClick}
-                >
-                  İnce
-                </DropdownItem>
-                <DropdownItem
-                  data-cy="medium-dough"
-                  active={dough == "Orta"}
-                  value="Orta"
-                  onClick={handleDoughClick}
-                >
-                  Orta
-                </DropdownItem>
-                <DropdownItem
-                  data-cy="thick-dough"
-                  active={dough == "Kalın"}
-                  value="Kalın"
-                  onClick={handleDoughClick}
-                >
-                  Kalın
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-        </div>
+        <DoughSelection dough={dough} setDough={setDough} />
       </div>
     </div>
   );
