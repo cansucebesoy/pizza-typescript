@@ -1,5 +1,13 @@
+type FoodItems = {
+  image: string;
+  name: string;
+  rating: string;
+  reviews: string;
+  price: string;
+};
+
 const PizzaOptions = () => {
-  const foodItems = [
+  const foodItems: FoodItems[] = [
     {
       image: "/food-1.png",
       name: "Terminal Pizza",

@@ -6,7 +6,9 @@ const Success = () => {
   const { state } = history.location;
   const { response } = state;
 
-  // console.log("response data:", response);
+  console.log("response data:", response);
+  const totalCost =
+    (response.pizzaCost + response.toppingsCost) * response.pizzaCount;
 
   return (
     <div className="bg-[#CE2829] w-screen h-screen overflow-auto">
@@ -27,8 +29,8 @@ const Success = () => {
             <span className="font-semibold">Hamur:&nbsp; </span>
             <span> {response.dough}</span>
           </div>
-          <div className="flex justify-between items-center border-b border-white/20 pb-2">
-            <span className="font-semibold">Ek Malzemeler:</span>
+          <div className="flex items-center border-b border-white/20 pb-2">
+            <span className="font-semibold">Ek Malzemeler:&nbsp;</span>
             <span>
               {response.toppings.map((topping, index) => (
                 <span key={index}>
@@ -43,11 +45,11 @@ const Success = () => {
           <p className="text-center font-semibold mb-4">Sipariş Toplamı</p>
           <div className="flex justify-between items-center">
             <span>Seçimler:</span>
-            <span>{response.toppingsCost} TL</span>
+            <span>{response.toppingsCost * response.pizzaCount}₺</span>
           </div>
           <div className="flex justify-between items-center font-bold mt-2">
             <span>Toplam:</span>
-            <span>{response.toppingsCost + response.pizzaCost} TL</span>
+            <span>{totalCost}₺</span>
           </div>
         </div>
       </div>

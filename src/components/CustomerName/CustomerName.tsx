@@ -1,6 +1,11 @@
 import { useForm } from "react-hook-form";
 
-const CustomerName = ({ name, setName }) => {
+type CustomerNameProps = {
+  name: string;
+  setName: (value: string) => void;
+};
+
+const CustomerName = ({ name, setName }: CustomerNameProps) => {
   const {
     register,
     watch,
@@ -9,7 +14,7 @@ const CustomerName = ({ name, setName }) => {
 
   const watchedName = watch("name", "");
 
-  const handleInput = (value) => {
+  const handleInput = (value: string) => {
     setName(value.trim());
   };
 

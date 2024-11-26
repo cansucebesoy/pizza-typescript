@@ -3,8 +3,22 @@ import OrderCount from "./OrderCount";
 import OrderSummary from "./OrderSummary";
 import { useState } from "react";
 
-const Checkout = ({ orderSummary }) => {
-  const [pizzaCount, setPizzaCount] = useState(1);
+type OrderSummary = {
+  size: string;
+  dough: string;
+  toppings: string[];
+  name: string;
+  note: string;
+  toppingsCost: number;
+  pizzaCost: number;
+};
+
+type CheckoutProps = {
+  orderSummary: OrderSummary;
+};
+
+const Checkout = ({ orderSummary }: CheckoutProps) => {
+  const [pizzaCount, setPizzaCount] = useState<number>(1);
 
   return (
     <div className="w-full flex justify-center mb-16">
@@ -18,11 +32,12 @@ const Checkout = ({ orderSummary }) => {
               toppingsCost={orderSummary.toppingsCost}
               pizzaCount={pizzaCount}
             />
-            <OrderButton orderSummary={orderSummary} />
+            <OrderButton orderSummary={orderSummary} pizzaCount={pizzaCount} />
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default Checkout;

@@ -8,14 +8,24 @@ import Checkout from "../../components/Checkout/Checkout";
 import CustomerName from "../../components/CustomerName/CustomerName";
 import Footer from "../../components/Footer/Footer";
 
-const Order = () => {
-  const [size, setSize] = useState("");
-  const [dough, setDough] = useState("");
-  const [toppings, setToppings] = useState([]);
-  const [name, setName] = useState("");
-  const [note, setNote] = useState("");
+type OrderSummary = {
+  size: string;
+  dough: string;
+  toppings: string[];
+  name: string;
+  note: string;
+  toppingsCost: number;
+  pizzaCost: number;
+};
 
-  const orderSummary = {
+const Order = () => {
+  const [size, setSize] = useState<string>("");
+  const [dough, setDough] = useState<string>("");
+  const [toppings, setToppings] = useState<string[]>([]);
+  const [name, setName] = useState<string>("");
+  const [note, setNote] = useState<string>("");
+
+  const orderSummary: OrderSummary = {
     size,
     dough,
     toppings,

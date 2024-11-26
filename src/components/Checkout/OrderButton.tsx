@@ -1,10 +1,19 @@
 import axios from "axios";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 
-const OrderButton = ({ orderSummary }) => {
-  //const [isSubmitted, setIsSubmitted] = useState(false);
-  //const [formError, setFormError] = useState('');
+type OrderSummaryProps = {
+  name: string;
+  toppings: string[];
+  size: string;
+  dough: string;
+};
 
+type OrderButtonProps = {
+  orderSummary: OrderSummaryProps;
+  pizzaCount: number;
+};
+
+const OrderButton = ({ orderSummary, pizzaCount }: OrderButtonProps) => {
   let history = useHistory();
 
   const handleClick = async () => {
@@ -17,14 +26,15 @@ const OrderButton = ({ orderSummary }) => {
       dough !== ""
     ) {
       try {
-        const response = await axios.post(
-          "https://reqres.in/api/pizza",
-          orderSummary
-        );
+        const response = await axios.post("https://reqres.in/api/pizza", {
+          ...orderSummary,
+          pizzaCount,
+        });
         history.push({
           pathname: "/Success",
           state: {
             response: response.data,
+            pizzaCount,
           },
         });
       } catch (error) {

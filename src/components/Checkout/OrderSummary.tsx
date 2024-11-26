@@ -1,4 +1,13 @@
-const OrderSummary = ({ toppingsCost, pizzaCost, pizzaCount }) => {
+type OrderSummaryProps = {
+  toppingsCost: number;
+  pizzaCost: number;
+  pizzaCount: number;
+};
+const OrderSummary = ({
+  toppingsCost,
+  pizzaCost,
+  pizzaCount,
+}: OrderSummaryProps) => {
   return (
     <div className="w-full">
       <div className="p-8 border rounded-sm font-semibold">

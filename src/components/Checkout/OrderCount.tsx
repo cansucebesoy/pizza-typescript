@@ -1,4 +1,8 @@
-const OrderCount = ({ pizzaCount, setPizzaCount }) => {
+type OrderCountProps = {
+  pizzaCount: number;
+  setPizzaCount: (value: number) => void;
+};
+const OrderCount = ({ pizzaCount, setPizzaCount }: OrderCountProps) => {
   const handleNegativeClick = () => {
     if (pizzaCount > 1) {
       setPizzaCount(pizzaCount - 1);

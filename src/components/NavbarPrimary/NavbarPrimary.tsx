@@ -1,6 +1,9 @@
-import React from "react";
+type NavItem = {
+  icon: string;
+  text: string;
+};
 
-const navItems = [
+const navItems: NavItem[] = [
   { icon: "/1.svg", text: "Ramen" },
   { icon: "/2.svg", text: "Sushi" },
   { icon: "/3.svg", text: "Bibimbap" },

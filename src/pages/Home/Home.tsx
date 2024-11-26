@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 import NavbarPrimary from "../../components/NavbarPrimary/NavbarPrimary";
 import Cards from "../../components/Cards/Cards";
 import NavbarSecondary from "../../components/NavbarSecondary/NavbarSecondary";

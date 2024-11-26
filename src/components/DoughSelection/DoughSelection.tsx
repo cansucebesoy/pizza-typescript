@@ -6,16 +6,22 @@ import {
 } from "reactstrap";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-const DoughSelection = ({ dough, setDough }) => {
+
+type DoughSelectionProps = {
+  dough: string;
+  setDough: (value: string) => void;
+};
+
+const DoughSelection = ({ dough, setDough }: DoughSelectionProps) => {
   const { register, setValue, watch } = useForm();
 
   // Mevcut hamur değeri
   const selectedDough = watch("dough", dough);
 
-  const handleDoughClick = (e) => {
-    const doughType = e.target.value;
+  const handleDoughClick = (e: React.MouseEvent<HTMLElement>) => {
+    const doughType = (e.target as HTMLButtonElement).value;
     setDough(doughType);
-    setValue("dough", doughType); // react-hook-form ile güncelleme
+    setValue("dough", doughType);
   };
 
   const [dropdownOpen, setDropdownOpen] = useState(false);

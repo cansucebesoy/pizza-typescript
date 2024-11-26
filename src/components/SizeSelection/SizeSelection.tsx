@@ -1,14 +1,17 @@
 import { useForm } from "react-hook-form";
 import DoughSelection from "../DoughSelection/DoughSelection";
 
-const SizeSelection = ({ setSize, dough, setDough }) => {
+type SizeSelectionProps = {
+  setSize: (value: string) => void;
+  dough: string;
+  setDough: (value: string) => void;
+};
+const SizeSelection = ({ setSize, dough, setDough }: SizeSelectionProps) => {
   const { register, watch } = useForm();
 
-  // Radio button seçimi izleniyor
   const selectedSize = watch("size", "");
 
-  // Seçilen boyutu state'e aktarma
-  const handleSizeChange = (value) => {
+  const handleSizeChange = (value: string) => {
     setSize(value);
   };
 
@@ -20,7 +23,6 @@ const SizeSelection = ({ setSize, dough, setDough }) => {
             Boyut Seç <span className="text-[#CE2829]">*</span>
           </h3>
           <div className="text-sm space-y-2 space-x-2 flex">
-            {/* Küçük Boy */}
             <label
               htmlFor="sizeRadio1"
               className="flex items-center mt-2 cursor-pointer"
@@ -39,7 +41,6 @@ const SizeSelection = ({ setSize, dough, setDough }) => {
               </div>
             </label>
 
-            {/* Orta Boy */}
             <label
               htmlFor="sizeRadio2"
               className="flex items-center mt-2 cursor-pointer"
@@ -58,7 +59,6 @@ const SizeSelection = ({ setSize, dough, setDough }) => {
               </div>
             </label>
 
-            {/* Büyük Boy */}
             <label
               htmlFor="sizeRadio3"
               className="flex items-center mt-2 cursor-pointer"

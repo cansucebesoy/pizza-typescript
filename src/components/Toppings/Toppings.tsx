@@ -1,12 +1,18 @@
 import { useForm } from "react-hook-form";
 import { FormGroup, Input, Label } from "reactstrap";
+import { toppingData } from "../../data/toppings";
+import { ChangeEvent } from "react";
 
-const Toppings = ({ toppings, setToppings }) => {
+type ToppingsProps = {
+  toppings: string[];
+  setToppings: (value: string[]) => void;
+};
+const Toppings = ({ toppings, setToppings }: ToppingsProps) => {
   const { register, watch } = useForm();
 
   const selectedToppings = watch("toppings", []);
 
-  const handleClick = (e) => {
+  const handleClick = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
       //console.log(e); - target -> checked:true/false
       if (!(toppings.length < 10)) {
@@ -24,24 +30,6 @@ const Toppings = ({ toppings, setToppings }) => {
       setToppings(newToppings);
     }
   };
-
-  const toppingData = [
-    "Pepperoni",
-    "Sosis",
-    "Kanada Jambonu",
-    "Tavuk Izgara",
-    "Soğan",
-    "Domates",
-    "Mısır",
-    "Sucuk",
-    "Jalepeno",
-    "Sarımsak",
-    "Biber",
-    "Mantar",
-    "Ananas",
-    "Kabak",
-    "Cheddar",
-  ];
 
   return (
     <div className="w-full flex justify-center ">
