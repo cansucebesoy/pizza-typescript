@@ -17,7 +17,7 @@ const Toppings = ({ toppings, setToppings }: ToppingsProps) => {
       //console.log(e); - target -> checked:true/false
       if (!(toppings.length < 10)) {
         e.preventDefault();
-        console.error("En fazla 10 malzeme seçebilirsiniz");
+        alert("En fazla 10 malzeme seçebilirsiniz!");
       } else {
         setToppings([...toppings, e.target.value]);
       }
