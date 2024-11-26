@@ -1,4 +1,3 @@
-import React from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import NavbarPrimary from "../../components/NavbarPrimary/NavbarPrimary";
 import Cards from "../../components/Cards/Cards";
@@ -8,6 +7,7 @@ import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   let history = useHistory();
+
   const handleClick = () => {
     history.push("/Order");
   };

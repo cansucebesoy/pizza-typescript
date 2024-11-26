@@ -1,4 +1,4 @@
-export default function PizzaBanner() {
+const PizzaBanner = () => {
   return (
     <div>
       <div className="w-full flex justify-center">
@@ -6,4 +6,5 @@ export default function PizzaBanner() {
       </div>
     </div>
   );
-}
+};
+export default PizzaBanner;

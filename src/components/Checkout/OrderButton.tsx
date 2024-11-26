@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-export default function OrderButton({ orderSummary }) {
+const OrderButton = ({ orderSummary }) => {
   //const [isSubmitted, setIsSubmitted] = useState(false);
   //const [formError, setFormError] = useState('');
 
@@ -42,4 +42,5 @@ export default function OrderButton({ orderSummary }) {
       SİPARİŞ VER
     </button>
   );
-}
+};
+export default OrderButton;

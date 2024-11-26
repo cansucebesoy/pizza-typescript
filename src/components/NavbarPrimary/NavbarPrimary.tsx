@@ -8,7 +8,7 @@ const navItems = [
   { icon: "/5.svg", text: "Bulgogi" },
 ];
 
-export default function NavbarPrimary() {
+const NavbarPrimary = () => {
   return (
     <nav className="w-full flex justify-center py-4">
       <div className="w-full md:w-2/3 px-4 md:px-0">
@@ -30,4 +30,5 @@ export default function NavbarPrimary() {
       </div>
     </nav>
   );
-}
+};
+export default NavbarPrimary;

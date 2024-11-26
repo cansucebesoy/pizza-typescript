@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form";
-
-export default function OrderNote({ setNote }) {
+const OrderNote = ({ setNote }) => {
   const {
     register,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -34,4 +32,6 @@ export default function OrderNote({ setNote }) {
       </div>
     </div>
   );
-}
+};
+
+export default OrderNote;

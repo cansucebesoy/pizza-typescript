@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { FormGroup, Input, Label } from "reactstrap";
 
-export default function Toppings({ toppings, setToppings }) {
+const Toppings = ({ toppings, setToppings }) => {
   const { register, watch } = useForm();
 
   const selectedToppings = watch("toppings", []);
@@ -77,4 +77,5 @@ export default function Toppings({ toppings, setToppings }) {
       </div>
     </div>
   );
-}
+};
+export default Toppings;

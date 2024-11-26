@@ -1,4 +1,4 @@
-export default function OrderInfo() {
+const OrderInfo = () => {
   return (
     <div className="w-full flex flex-col items-center bg-[#FAF7F2]">
       <h2 className="w-full md:w-2/3 xl:w-2/5 px-4 text-xl font-bold mb-6 mt-8">
@@ -28,4 +28,5 @@ export default function OrderInfo() {
       </p>
     </div>
   );
-}
+};
+export default OrderInfo;

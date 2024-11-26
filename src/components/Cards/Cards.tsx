@@ -1,4 +1,8 @@
-export default function Cards({ handleClick }) {
+type CardsProps = {
+  handleClick: () => void;
+};
+
+const Cards = ({ handleClick }: CardsProps) => {
   return (
     <>
       <div className="w-full flex justify-center">
@@ -9,6 +13,7 @@ export default function Cards({ handleClick }) {
               src="/kart-1.png"
               alt=""
             />
+            now i
             <div className="absolute top-4 left-4 md:top-10 md:left-10 z-50">
               <p className="text-white font-quattrocento font-semibold text-4xl md:text-6xl">
                 Özel <br /> Lezzetus
@@ -79,4 +84,6 @@ export default function Cards({ handleClick }) {
       </div>
     </>
   );
-}
+};
+
+export default Cards;

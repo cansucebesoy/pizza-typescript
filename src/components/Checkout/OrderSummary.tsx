@@ -1,4 +1,4 @@
-export default function OrderSummary({ toppingsCost, pizzaCost, pizzaCount }) {
+const OrderSummary = ({ toppingsCost, pizzaCost, pizzaCount }) => {
   return (
     <div className="w-full">
       <div className="p-8 border rounded-sm font-semibold">
@@ -12,4 +12,6 @@ export default function OrderSummary({ toppingsCost, pizzaCost, pizzaCount }) {
       </div>
     </div>
   );
-}
+};
+
+export default OrderSummary;

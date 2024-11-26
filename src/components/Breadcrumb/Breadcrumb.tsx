@@ -1,4 +1,4 @@
-export default function Breadcrumb() {
+const Breadcrumb = () => {
   return (
     <div>
       <a className=" text-[#5F5F5F] font-semibold " href="/Home">
@@ -8,4 +8,6 @@ export default function Breadcrumb() {
       <span className="font-semibold text-[#CE2829]">Sipariş Oluştur</span>
     </div>
   );
-}
+};
+
+export default Breadcrumb;

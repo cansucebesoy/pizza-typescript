@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import DoughSelection from "../DoughSelection/DoughSelection";
 
-export default function SizeSelection({ setSize, dough, setDough }) {
+const SizeSelection = ({ setSize, dough, setDough }) => {
   const { register, watch } = useForm();
 
   // Radio button seçimi izleniyor
@@ -83,4 +83,5 @@ export default function SizeSelection({ setSize, dough, setDough }) {
       </div>
     </div>
   );
-}
+};
+export default SizeSelection;

@@ -1,7 +1,7 @@
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import PizzaBanner from "../PizzaBanner/PizzaBanner";
 
-export default function Header() {
+const Header = () => {
   return (
     <>
       <div className="w-full h-24 bg-[#CE2829] flex flex-col items-center">
@@ -19,4 +19,5 @@ export default function Header() {
       </div>
     </>
   );
-}
+};
+export default Header;

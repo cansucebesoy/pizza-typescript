@@ -6,8 +6,7 @@ import {
 } from "reactstrap";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-
-export default function DoughSelection({ dough, setDough }) {
+const DoughSelection = ({ dough, setDough }) => {
   const { register, setValue, watch } = useForm();
 
   // Mevcut hamur değeri
@@ -70,4 +69,5 @@ export default function DoughSelection({ dough, setDough }) {
       </div>
     </div>
   );
-}
+};
+export default DoughSelection;

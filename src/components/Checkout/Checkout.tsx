@@ -3,7 +3,7 @@ import OrderCount from "./OrderCount";
 import OrderSummary from "./OrderSummary";
 import { useState } from "react";
 
-export default function Checkout({ orderSummary }) {
+const Checkout = ({ orderSummary }) => {
   const [pizzaCount, setPizzaCount] = useState(1);
 
   return (
@@ -24,4 +24,5 @@ export default function Checkout({ orderSummary }) {
       </div>
     </div>
   );
-}
+};
+export default Checkout;

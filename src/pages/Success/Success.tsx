@@ -1,12 +1,12 @@
 import React from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 
 const Success = () => {
   let history = useHistory();
   const { state } = history.location;
   const { response } = state;
 
-  console.log("response data:", response);
+  // console.log("response data:", response);
 
   return (
     <div className="bg-[#CE2829] w-screen h-screen overflow-auto">

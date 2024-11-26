@@ -1,4 +1,4 @@
-export default function OrderCount({ pizzaCount, setPizzaCount }) {
+const OrderCount = ({ pizzaCount, setPizzaCount }) => {
   const handleNegativeClick = () => {
     if (pizzaCount > 1) {
       setPizzaCount(pizzaCount - 1);
@@ -28,4 +28,5 @@ export default function OrderCount({ pizzaCount, setPizzaCount }) {
       </button>
     </div>
   );
-}
+};
+export default OrderCount;

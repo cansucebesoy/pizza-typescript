@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 
-export default function CustomerName({ name, setName }) {
+const CustomerName = ({ name, setName }) => {
   const {
     register,
     watch,
@@ -48,4 +48,5 @@ export default function CustomerName({ name, setName }) {
       </div>
     </div>
   );
-}
+};
+export default CustomerName;
